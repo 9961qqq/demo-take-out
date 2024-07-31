@@ -13,7 +13,7 @@ export default defineConfig({
   },
   // 开启代理
   server: {
-    host: '0.0.0.0',
+    host: ['0.0.0.0'],
     // public: '0.0.0.0:5173', // 本地的ip:端口号
     port: 5173,
     open: true,
@@ -21,7 +21,7 @@ export default defineConfig({
       '/api': {
         // 前缀替换成代理地址： 5173 -> 8080 后端tomcat服务器端口号
         // target: 'http://localhost:8081/admin',
-        target: 'http://[2408:844c:b300:11b4:5a58:ea4f:8472:f222]:8081/admin',
+        target: 'http://[::0]:8081/admin',
         ws: false,
         secure: false,
         changeOrigin: true,
