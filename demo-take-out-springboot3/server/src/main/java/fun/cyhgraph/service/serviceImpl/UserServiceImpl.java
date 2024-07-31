@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
      */
     public User wxLogin(UserLoginDTO userLoginDTO) {
         // 调用私有方法，其中利用HttpClient来调用微信API服务，获取openid
-//        String openid = getOpenId(userLoginDTO.getCode());
+        //String openid = getOpenId(userLoginDTO.getCode());
         String openid = "123456";
         // 判断openid是否为空，如果为空表示登录失败，抛出业务异常
         if (openid == null) {
@@ -55,6 +55,7 @@ public class UserServiceImpl implements UserService {
                     .build();
             userMapper.insert(user);
         }
+        user = userMapper.getByOpenid(openid);
         return user;
     }
 

@@ -1,7 +1,8 @@
 "use strict";
 const common_vendor = require("../common/vendor.js");
 const stores_modules_user = require("../stores/modules/user.js");
-const baseURL = "http://localhost:8081";
+// const baseURL = "http://localhost:8081";
+const baseURL = "http://[2408:844c:b300:11b4:5a58:ea4f:8472:f222]:8081";
 const httpInterceptor = {
   // 拦截前触发
   invoke(options) {

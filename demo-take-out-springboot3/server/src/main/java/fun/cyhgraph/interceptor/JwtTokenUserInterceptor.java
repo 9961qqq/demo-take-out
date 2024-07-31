@@ -46,8 +46,7 @@ public class JwtTokenUserInterceptor implements HandlerInterceptor {
         try {
             log.info("jwt校验:{}", token);
             Claims claims = JwtUtil.parseJWT(jwtProperties.getUserSecretKey(), token);
-//            Integer userId = Integer.valueOf(claims.get(JwtClaimsConstant.USER_ID).toString());
-            Integer userId = 1;
+            Integer userId = Integer.valueOf(claims.get(JwtClaimsConstant.USER_ID).toString());
             log.info("当前用户的id：{}", userId);
             // 将id存到当前线程thread的局部空间里面，并在controller,service或者其他地方进行调用获取id
             // 这个Client端的线程应该和管理端的不一样，因此有两个线程id

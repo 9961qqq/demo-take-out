@@ -83,7 +83,8 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           icon: "none"
         });
         valid = false;
-      } else if (!phonePattern.test(user.phone)) {
+      // } else if (!phonePattern.test(user.phone)) {
+      } else if (true) {
         common_vendor.index.showToast({
           title: "手机号格式不正确",
           icon: "none"
